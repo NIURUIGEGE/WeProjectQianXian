@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.qfedu</groupId>
+    <artifactId>QianXian</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>QianXian_Core</module>
+        <module>QianXian_Domain</module>
+        <module>QianXian_Mapper</module>
+        <module>QianXian_SSOService</module>
+        <module>QianXian_SSOServiceProvider</module>
+        <module>QianXian_SSOController</module>
+        <module>QianXian_UIController</module>
+        <module>QianXian_UIWeb</module>
+        <module>QianXian_AdminWeb</module>
+        <module>QianXian_AutoCreate</module>
+        <module>QianXian_AdminController</module>
+        <module>QianXian_AdminService</module>
+        <module>QianXian_AdminServiceProvider</module>
+        <module>QianXian_UIService</module>
+        <module>QianXian_UIServiceProvider</module>
+    </modules>
+
+    <!--指定版本号-->
+    <properties>
+        <spring.version>5.0.7.RELEASE</spring.version>
+        <mybatis.version>3.4.6</mybatis.version>
+        <mysql.version>5.1.46</mysql.version>
+        <druid.version>1.1.10</druid.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <mybatis-spring.version>1.3.2</mybatis-spring.version>
+        <aspectjweaver.version>1.9.1</aspectjweaver.version>
+        <log4j.version>1.2.17</log4j.version>
+        <servlet.version>3.1.0</servlet.version>
+        <jackson.version>2.9.6</jackson.version>
+        <mail.version>1.6.1</mail.version>
+        <fileupload.version>1.3.3</fileupload.version>
+        <poi.version>3.17</poi.version>
+        <geoip2.version>2.12.0</geoip2.version>
+        <shirospring.version>1.4.0</shirospring.version>
+        <json.version>20180130</json.version>
+        <jedis.version>2.9.0</jedis.version>
+        <dubbo.version>2.6.2</dubbo.version>
+        <zk.version>3.4.13</zk.version>
+        <zkclient.version>0.10</zkclient.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <oss.version>2.8.3</oss.version>
+    </properties>
+    <!--限定版本号-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 数据库驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- json操作工具 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- Mybatis和Spring的桥梁jar -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <!-- Mybatis的包 -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <!-- Spring jar web模块 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectjweaver.version}</version>
+            </dependency>
+
+            <!-- 日志 Mybatis -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>javax.mail-api</artifactId>
+                <version>${mail.version}</version>
+            </dependency>
+
+            <!--fileupload文件上传 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${fileupload.version}</version>
+            </dependency>
+            <!-- poi实现excel操作 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.maxmind.geoip2/geoip2 -->
+            <dependency>
+                <groupId>com.maxmind.geoip2</groupId>
+                <artifactId>geoip2</artifactId>
+                <version>${geoip2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shirospring.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.json/json -->
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>${json.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zk.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${oss.version}</version>
+            </dependency>
+
+
+
+        </dependencies>
+    </dependencyManagement>
+    <!--构建设置-->
+    <build>
+        <resources>
+            <!--需要设置打包的文件 特别是非java文件-->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <!--修改Maven默认的jdk版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

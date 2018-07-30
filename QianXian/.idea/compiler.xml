@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="QianXian_AdminController" />
+        <module name="QianXian_AdminService" />
+        <module name="QianXian_AdminServiceProvider" />
+        <module name="QianXian_AdminWeb" />
+        <module name="QianXian_AutoCreate" />
+        <module name="QianXian_Core" />
+        <module name="QianXian_Domain" />
+        <module name="QianXian_Mapper" />
+        <module name="QianXian_SSOController" />
+        <module name="QianXian_SSOService" />
+        <module name="QianXian_SSOServiceProvider" />
+        <module name="QianXian_UIController" />
+        <module name="QianXian_UIService" />
+        <module name="QianXian_UIServiceProvider" />
+        <module name="QianXian_UIWeb" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="QianXian_Provider" target="1.8" />
+      <module name="QianXian_Service" target="1.8" />
+      <module name="UIService" target="1.8" />
+      <module name="UIServiceProvider" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
